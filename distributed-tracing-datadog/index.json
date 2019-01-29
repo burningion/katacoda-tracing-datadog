@@ -25,7 +25,8 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal"
+    "uilayout": "editor-terminal",
+    "dashboards": [{"name": "IoT Project", "port": 5000}]
   },
   "backend": {
     "imageid": "ubuntu"
