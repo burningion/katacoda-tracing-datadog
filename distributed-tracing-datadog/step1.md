@@ -4,7 +4,7 @@ Run a `docker images` on the terminal environment. We should see `datadog/agent`
 
 Once those are up, we can then do our:
 
-`POSTGRES_USER=postgres POSTGRES_PASSWORD=<pg password> DD_API_KEY=<api key> docker-compose up`{{copy}}
+`DD_API_KEY=<api key> docker-compose up`{{copy}}
 
 With that running, we should be able to view our services running on port 5000 in the web browser here: 
 
