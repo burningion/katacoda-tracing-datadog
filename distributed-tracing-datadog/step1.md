@@ -6,6 +6,9 @@ Once those are up, we can then do our:
 
 `DD_API_KEY=<api key> docker-compose up -d`{{copy}}
 
-With that running, we should be able to view our services running on port 5000 in the web browser here: 
+It will take a while, but eventually, a `docker ps` should show all of our services running.
+
+With the services up, we should be able to view our services running on port 5000 in the web browser here: 
 
 https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com/
+
