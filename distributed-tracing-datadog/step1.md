@@ -1,8 +1,10 @@
-# Looking at the Images
+# Starting Our Microservices with Docker Compose
 
-Run a `docker images` on the terminal environment. We should see `datadog/agent` among those listed. By the time our process is finished building, we'll see a list of 3 containers, each beginning with `distributedtracing`.
+This APM workshop uses multiple docker images in order to build a micro services environment.
 
-Once those are up, we can then do our:
+We can inspect the `docker-compose.yml` in the distributed tracing folder, and see the exact services.
+
+Let's first bring everything up with the following command:
 
 `DD_API_KEY=<api key> docker-compose up -d`{{copy}}
 
