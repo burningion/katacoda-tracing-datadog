@@ -27,7 +27,7 @@
     }
   },
   "environment": {
-    "uilayout": "theia",
+    "uilayout": "editor-terminal",
     "showdashboard": true,
     "dashboards": [{"name": "IoT Project", "port": 5000}]
   },
