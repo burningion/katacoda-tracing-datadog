@@ -1,4 +1,4 @@
-# How Distributed Tracing works with Datadog
+# Enabling Distributed Tracing with the Datadog Agent Container
 
 If you paid attention when looking through our `docker-compose.yaml`, you noticed that we run a single `datadog-agent` container, which ships off the traces, logs, and metrics for our entire cluster.
 
