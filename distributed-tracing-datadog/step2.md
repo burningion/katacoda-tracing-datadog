@@ -31,4 +31,10 @@ agent:
 
 The Datadog Agent container is configured via environment variables and mounting volumes on the underlying host.  We also open up port `8126`, where traces get shipped to from the underlying applications.
 
-The most important environment variable we set is `DD_API_KEY`, which is generated when we create an account. 
+The most important environment variable we set is `DD_API_KEY`, which is generated when we create an account. This is the API key used to authenticate with Datadog and add our hosts to the environment.
+
+Next, we set `DD_APM_ENABLED` to true, and add our `DD_APM_ANALYZED_SPANS`. Analyzed spans lets Datadog know to ingest all the spans for trace search and analytics.
+
+Finally, we enable logs, processes, and set an environment for our current work environment. By setting a work environment, we can isolate our multiple Datadog workspaces. 
+
+Try setting it to `env:apm-workshop`, and bringing back up our environment with our previous `docker-compose up`.
