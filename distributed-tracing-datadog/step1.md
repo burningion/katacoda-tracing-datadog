@@ -1,8 +1,8 @@
 # Starting Our Microservices with Docker Compose
 
-This APM workshop uses multiple docker images in order to build a micro services environment.
+This APM workshop uses multiple docker images in order to build a micro services environment for local development.
 
-We can inspect the `docker-compose.yml` in the distributed tracing folder, and see the exact services.
+We can inspect the `docker-compose.yml` in the distributed tracing folder, and see the exact services we'll be running.
 
 Let's first bring everything up with the following command:
 
@@ -16,3 +16,5 @@ https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com/
 
 
 Remember, you can press CTRL+c and exit your running `docker-compose`.
+
+After clicking the link, hop into Datadog, and check to see if you're receiving traces. When you've confirmed traces are showing up, move on to the next step.
