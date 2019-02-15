@@ -28,7 +28,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "hideintro": true,
+    
     "showdashboard": true,
     "dashboards": [{"name": "IoT Project", "port": 5000}]
   },
