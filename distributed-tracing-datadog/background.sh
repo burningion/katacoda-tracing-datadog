@@ -1,4 +1,5 @@
 #!/bin/bash
-git clone https://github.com/burningion/distributed-tracing-with-apm-workshop
-cd distributed-tracing-with-apm-workshop
+mkdir /tracing-workshop
+git clone https://github.com/burningion/distributed-tracing-with-apm-workshop /tracing-workshop
+cd /tracing-workshop
 docker-compose pull
