@@ -28,7 +28,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    
+    "uieditorpath": "/root/distributed-tracing-with-apm-workshop",
     "showdashboard": true,
     "dashboards": [{"name": "IoT Project", "port": 5000}]
   },
