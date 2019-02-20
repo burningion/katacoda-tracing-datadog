@@ -1,0 +1,22 @@
+{
+  "title": "Services Test",
+  "description": "Testing multiple services",
+  "details": {
+    "steps": [
+      {
+        "title": "Step 1",
+        "text": "step1.md"
+      }
+    ],
+    "intro": {
+    },
+    "finish": {
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal"
+  },
+  "backend": {
+    "imageid": "ubuntu-cluster5"
+  }
+}
