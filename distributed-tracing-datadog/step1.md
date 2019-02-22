@@ -20,4 +20,6 @@ https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com/
 
 After clicking the link, hop into Datadog, and check to see if you're receiving traces. When you've confirmed traces are showing up, move on to the next step.
 
+![Trace List](../assets/trace-list.gif)
+
 Remember, you can press CTRL+c and exit your running `docker-compose`.
