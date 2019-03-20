@@ -13,9 +13,7 @@
         }
       ],
       "intro": {
-        "text": "intro.md",
-        "code": "foreground.sh",
-        "courseData": "background.sh"
+        "text": "intro.md"
       },
       "finish": {
         "text": "finish.md"
@@ -26,6 +24,6 @@
       "uilayout": "terminal-terminal"
     },
     "backend": {
-      "imageid": "kubernetes-cluster"
+      "imageid": "kubernetes-cluster-running"
     }
   }
