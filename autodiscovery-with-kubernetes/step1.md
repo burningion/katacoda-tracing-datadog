@@ -1,13 +1,7 @@
-# Creating a Kubernetes Cluster
+# Deploying Our Application to Kubernetes
 
-Before we get add autodiscovery, let's spin up a kubernetes cluster on two hosts:
+The workshop already has an application ready to be deployed to kubernetes included.
 
-In the first host on the right, issue the following command to initialize the kubernetes cluster:
+Change into the YAML file directory with a `cd k8s-yaml-files/`. You should be able to `ls` and see the YAML files for every service we plan on running in our cluster.
 
-`kubeadm init --kubernetes-version $(kubeadm version -o short)`{{execute HOST1}}
-
-Next, add the second host to the cluster with a `kubeadm` join:
-
-`kubeadm join`{{execute HOST2}}
-
-Great! Next, let's make sure our nodes are available with a `kubectl get nodes` on `host1`.
+You can `kubectl apply -f <filename>` for each one of these files, and we should see our entire cluster spin up.

@@ -6,20 +6,23 @@
         {
           "title": "Step 1",
           "text": "step1.md",
-          "code": "foreground.sh",
-          "courseData": "background.sh"
         },
         {
           "title": "Step 2",
           "text": "step2.md"
         }
       ],
+      "intro": {
+        "text": "intro.md",
+        "code": "foreground.sh",
+        "courseData": "background.sh"
+      },
       "finish": {
         "text": "finish.md"
       }
     },
     "environment": {
-      "hideintro": true,
+      "hideintro": false,
       "uilayout": "terminal-terminal"
     },
     "backend": {
