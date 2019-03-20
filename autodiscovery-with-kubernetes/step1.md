@@ -10,6 +10,4 @@ Next, add the second host to the cluster with a `kubeadm` join:
 
 `kubeadm join`{{execute HOST2}}
 
-Great! Next, let's make sure our nodes are available with a `kubectl get nodes`. 
-
-You should be able to run that on either host.
+Great! Next, let's make sure our nodes are available with a `kubectl get nodes` on `host1`.
