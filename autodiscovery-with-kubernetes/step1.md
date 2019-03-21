@@ -2,6 +2,23 @@
 
 The workshop already has an application ready to be deployed to kubernetes included.
 
-Change into the YAML file directory with a `cd k8s-yaml-files/`. You should be able to `ls` and see the YAML files for every service we plan on running in our cluster.
+First, ensure your kubernetes cluster has been initialized, and both nodes have been added. You can do this by running `kubectl get nodes` in host1.
 
-You can `kubectl apply -f <filename>` for each one of these files, and we should see our entire cluster spin up.
+On host1, change into the YAML file directory with a `cd /k8s-yaml-files`. You should be able to `ls` and see the YAML files for every service we plan on running in our cluster.
+
+First, add your Datadog API key to the secrets. You can do this with a:
+
+```bash
+$ kubectl create secret generic datadog-api --from-literal=token=<YOUR_DATADOG_API_KEY>
+```
+
+Once that's done, we'll next need to create a secret username and password for our PostgreSQL database.
+
+```bash
+$ kubectl create secret generic postgres-user --from-literal=token=postgres
+$ kubectl create secret generic postgres-password --from-literal=token=<YOUR_PASSWORD>
+```
+
+You can `kubectl apply -f <filename>` for each one of the files in the YAML directory, and we should see our entire cluster spin up.
+
+Check your services are running with a `kubectl get services`.
