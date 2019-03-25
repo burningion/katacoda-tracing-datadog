@@ -19,4 +19,11 @@ $ kubectl create secret generic postgres-user --from-literal=token=postgres
 $ kubectl create secret generic postgres-password --from-literal=token=<YOUR_PASSWORD>
 ```
 
-Finally, spin up the Datadog Agent
+Finally, spin up the Datadog Agent container, so we can see our Nodes in the Datadog app:
+
+```bash
+$ kubectl apply -f datadog-agent.yaml
+daemonset.extensions/datadog-agent created
+```
+
+You should now be able to see your cluster inside of Datadog. Verify this before continuing on to the next step.
