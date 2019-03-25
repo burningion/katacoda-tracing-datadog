@@ -23,7 +23,10 @@
     },
     "environment": {
       "hideintro": true,
-      "uilayout": "terminal-terminal"
+      "uilayout": "editor-terminal",
+      "uieditorpath": "/tracing-workshop",
+      "showdashboard": true,
+      "dashboards": [{"name": "IoT Project", "port": 5005}]
     },
     "backend": {
       "imageid": "kubernetes-cluster-running"

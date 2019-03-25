@@ -19,6 +19,4 @@ $ kubectl create secret generic postgres-user --from-literal=token=postgres
 $ kubectl create secret generic postgres-password --from-literal=token=<YOUR_PASSWORD>
 ```
 
-You can `kubectl apply -f <filename>` for each one of the files in the YAML directory, and we should see our entire cluster spin up.
-
-Check your services are running with a `kubectl get services`.
+Finally, spin up the Datadog Agent
