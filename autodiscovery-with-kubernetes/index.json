@@ -22,7 +22,6 @@
       }
     },
     "environment": {
-      "hideintro": true,
       "uilayout": "editor-terminal",
       "uieditorpath": "/tracing-workshop",
       "showdashboard": true,
