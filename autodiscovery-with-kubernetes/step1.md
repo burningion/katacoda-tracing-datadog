@@ -23,7 +23,6 @@ Finally, spin up the Datadog Agent container, so we can see our Nodes in the Dat
 
 ```bash
 $ kubectl apply -f datadog-agent.yaml
-daemonset.extensions/datadog-agent created
 ```
 
 You should now be able to see your cluster inside of Datadog. Verify this before continuing on to the next step.
