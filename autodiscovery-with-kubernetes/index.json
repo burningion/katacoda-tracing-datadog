@@ -29,7 +29,7 @@
       "uilayout": "editor-terminal",
       "uieditorpath": "/tracing-workshop",
       "showdashboard": true,
-      "dashboards": [{"name": "IoT Project", "port": 5005}]
+      "dashboards": [{"name": "IoT Project", "port": 30001}]
     },
     "backend": {
       "imageid": "kubernetes-cluster-running"
