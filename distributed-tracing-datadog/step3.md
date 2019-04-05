@@ -37,4 +37,4 @@ You can see this in the `command` we've set in the file. Look for other Python s
 
 Besides instrumenting our application with `ddtrace-run`, we also add a name for our service via the `DATADOG_SERVICE_NAME`. In this case, our frontend application has a service name so we can see it both in services and in our service map.
 
-Try finding the application in both in the Datadog user interface.
+Try finding the application service in Trace Services and Trace Map in the Datadog user interface.
