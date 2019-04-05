@@ -8,17 +8,14 @@ Open up the `docker-compose.yaml`, and let's walk through the configuration opti
 
 ```
 agent:
-    image: "datadog/agent:6.9.0"
+    image: "datadog/agent:6.10.2"
     environment:
       - DD_API_KEY
       - DD_APM_ENABLED=true
-      # Add DD_APM_ANALYZED_SPANS to the Agent container environment.
-      # Compatible with version 12.6.5250 or above.
-      - DD_APM_ANALYZED_SPANS=users-api|express.request=1,sensors-api|flask.request=1,pumps-service|flask.request=1,iot-frontend|flask.request=1
       - DD_LOGS_ENABLED=true
       - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
       - DD_PROCESS_AGENT_ENABLED=true
-      - DD_TAGS='env:dev'
+      - DD_TAGS='env:apm-workshop'
     ports:
       - "8126:8126"
     volumes:
@@ -33,13 +30,15 @@ The Datadog Agent container is configured via environment variables and mounting
 
 The most important environment variable we set is `DD_API_KEY`, which is generated when we create an account. This is the API key used to authenticate with Datadog and add our hosts to the environment.
 
-Next, we set `DD_APM_ENABLED` to true, and add our `DD_APM_ANALYZED_SPANS`. Analyzed spans lets Datadog know to ingest all the spans for trace search and analytics.
+Next, we set `DD_APM_ENABLED` to true. Although enabled by default, setting this variable lets other people know we're using APM.
 
-Finally, we enable logs, processes, and set an environment for our current work environment. By setting a work environment, we can isolate our multiple Datadog workspaces. 
+Finally, we enable logs, processes, and set an environment for our current work environment with the `DD_TAGS` variable. 
 
-Try setting it to `env:apm-workshop-live`, and bringing back up our environment with `DD_API_KEY=<api key> docker-compose up -d`.
+By setting a work environment, we can isolate our multiple Datadog workspaces.
 
-You should then see the services we're running show up under Services in APM:
+Try setting the `DD_TAGS` env to `env:apm-workshop-live`, and bringing back up our environment with `DD_API_KEY=<api key> docker-compose up -d`.
+
+You should then see the services we're running show up under Services in APM, and a new env should show up in the top left corner:
 
 ![Service List](../assets/service-list.png)
 
