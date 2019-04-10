@@ -2,7 +2,7 @@
 
 Let's open up one of our microservice's source code and see how code gets instrumented with Datadog.
 
-Find the `frontend` directory, and try opening the `app.py` file.
+Find the `frontend` directory, and try opening the `api.py` file.
 
 You'll see a few things.
 
@@ -26,6 +26,12 @@ Instead, directly in our code, we grab our current span and add data to it.
 Tags within Traces allow us to set custom data to sort by in Datadog. 
 
 We can build up dashboards based upon traces with Trace Search and Analytics, allowing us to see the experience for specific users, or specific organizations across our infrastructure.
+
+Jump into the Datadog APM Services page, and find the corresponding URL endpoint for `/generate_requests`.
+
+Open a Trace under `generate_requests`. If there are no traces for that endpoint, open up the IoT web app, and scroll to the botton and click the buttons to generate concurrent users. They're under `Generate API Traffic`.
+
+Notice how the tags show up as 
 
 Back to the configuration of our app, the Tracer configuration lives in the original `docker-compose.yml` file. 
 

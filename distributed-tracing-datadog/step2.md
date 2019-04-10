@@ -45,3 +45,5 @@ You should then see the services we're running show up under Services in APM, an
 By setting our `env`, we can ensure our test traces only go to an isolated environment.
 
 This is especially useful when we don't want to mess up other people's environments when testing or building a new service.
+
+I like to use `env`s to separate or test things locally before deploying a new change to my code. They're also great just to learn more about Tracing in an isolated environment.
