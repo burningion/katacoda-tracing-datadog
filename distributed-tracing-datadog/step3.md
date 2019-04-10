@@ -16,7 +16,7 @@ For one, we're not doing any configuration for the `tracer` object.
 Instead, directly in our code, we grab our current span and add data to it.
 
 ```python
-    span = tracer.current_span()
+    span = tracer.current_root_span()
     app.logger.info(f"Looking at {span}")
     app.logger.info(f"with span id {span.span_id}")
 
@@ -31,7 +31,7 @@ Jump into the Datadog APM Services page, and find the corresponding URL endpoint
 
 Open a Trace under `generate_requests`. If there are no traces for that endpoint, open up the IoT web app, and scroll to the botton and click the buttons to generate concurrent users. They're under `Generate API Traffic`.
 
-Notice how the tags show up as 
+Notice how the tags show up as information for each span. We can then slice and dice our requests with these tags with Trace Search and Analytics.
 
 Back to the configuration of our app, the Tracer configuration lives in the original `docker-compose.yml` file. 
 
