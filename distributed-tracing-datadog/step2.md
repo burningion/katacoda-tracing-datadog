@@ -36,7 +36,7 @@ Finally, we enable logs, processes, and set an environment for our current work 
 
 By setting a work environment, we can isolate our multiple Datadog workspaces.
 
-Try setting the `DD_TAGS` env to `env:apm-workshop-live`, and bringing back up our environment with `DD_API_KEY=<api key> docker-compose up -d`.
+Try setting the `DD_TAGS` env to `env:apm-workshop-live`, and bringing back up our environment with `DD_API_KEY=<api key> docker-compose up`.
 
 You should then see the services we're running show up under Services in APM, and a new env should show up in the top left corner:
 
