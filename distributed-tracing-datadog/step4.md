@@ -27,3 +27,11 @@ If you're in a hurry, you can also view trace via the Trace List, and click to s
 ![Trace List](../assets/trace-list.png)
 
 With this info, we've narrowed the bottleneck down to the specific `/devices/` route. We can now look and change any bottlenecks we might find in the `pumps-service`.
+
+Before we leave this screen, take a look a the logs and metrics for the delayed endpoint.
+
+Notice our logs span across both services, and we can see them in aggregate in one spot:
+
+![Trace Log Correlation](../assets/trace-log-correlation.png)
+
+Let's next jump into the code and diagnose our service's delay.
