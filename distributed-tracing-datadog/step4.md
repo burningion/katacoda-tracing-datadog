@@ -18,4 +18,12 @@ But let's ignore that for now, and diagnose our `pumps-service`.
 
 Click the top of our web application to add a few pumps, and then jump into `POST /add_pump` inside of the `iot-frontend` service.
 
+![Flame graph](../assets/trace-view.png)
+
 Looking at the spans, we can see the majority of time (96%!) is spent in the pumps service.
+
+If you're in a hurry, you can also view trace via the Trace List, and click to sort by duration:
+
+![Trace List](../assets/trace-list.png)
+
+With this info, we've narrowed the bottleneck down to the specific `/devices/` route. We can now look and change any bottlenecks we might find in the `pumps-service`.
