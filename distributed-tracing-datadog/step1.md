@@ -8,7 +8,7 @@ Let's first bring everything up with the following command:
 
 `DD_API_KEY=<api key> docker-compose up`{{copy}}
 
-If you get a error like: 
+If you get a error: 
 
 `cannot send spans to agent:8126: [Errno -2] Name does not resolve` 
 
