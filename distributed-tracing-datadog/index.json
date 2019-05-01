@@ -49,6 +49,6 @@
     "dashboards": [{"name": "IoT Project", "port": 5000}]
   },
   "backend": {
-    "imageid": "ubuntu"
+    "imageid": "datadog-ubuntu"
   }
 }
