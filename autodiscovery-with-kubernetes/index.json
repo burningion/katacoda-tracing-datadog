@@ -32,6 +32,6 @@
       "dashboards": [{"name": "IoT Project", "port": 30001}]
     },
     "backend": {
-      "imageid": "kubernetes-cluster-running"
+      "imageid": "datadog-kubernetes-cluster-running"
     }
   }
