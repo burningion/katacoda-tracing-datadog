@@ -17,6 +17,6 @@
       "dashboards": [{"name": "Hipster Shop", "port": 30001}]
     },
     "backend": {
-      "imageid": "datadog-kubernetes-cluster-running"
+      "imageid": "kubernetes-cluster-running"
     }
   }
