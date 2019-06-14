@@ -12,7 +12,7 @@
     },
     "environment": {
       "uilayout": "editor-terminal",
-      "uieditorpath": "/golang-kubernetes",
+      "uieditorpath": "/hipster-shop",
       "showdashboard": true,
       "dashboards": [{"name": "Hipster Shop", "port": 30001}]
     },
