@@ -22,6 +22,7 @@ $ kubectl create secret generic postgres-password --from-literal=token=<YOUR_PAS
 Finally, spin up the Datadog Agent container, so we can see our Nodes in the Datadog app:
 
 ```bash
+$ cd k8s-yaml-file/
 $ kubectl apply -f datadog-agent.yaml
 ```
 
