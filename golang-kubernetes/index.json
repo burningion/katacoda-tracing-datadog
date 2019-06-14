@@ -1,0 +1,22 @@
+{
+    "title": "Kubernetes Autodiscovery",
+    "description": "Multi node Kubernetes cluster configured using Kubeadm",
+    "details": {
+      "steps": [
+        {
+          "title": "Step 1",
+          "text": "step1.md",
+          "courseData": "foreground.sh"
+        }
+      ]
+    },
+    "environment": {
+      "uilayout": "editor-terminal",
+      "uieditorpath": "/golang-kubernetes",
+      "showdashboard": true,
+      "dashboards": [{"name": "Hipster Shop", "port": 30001}]
+    },
+    "backend": {
+      "imageid": "kubernetes-cluster-running"
+    }
+  }
