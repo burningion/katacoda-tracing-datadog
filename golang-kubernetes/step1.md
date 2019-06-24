@@ -1,6 +1,8 @@
 # Starting Our Microservices with Docker Compose
 
-Before we dive into Kubernetes, we'll first instrument our application using `docker-compose`. Using `docker-compose` will allow us to simplify our environment, ensuring we focus on instrumentation, before jumping into a live Kubernetes cluster.
+Before we dive into Kubernetes, let's first instrument our application using `docker-compose`. 
+
+Using `docker-compose` when starting will allow us to simplify our environment, ensuring we focus on instrumentation concepts, before jumping into a live Kubernetes cluster.
 
 We can inspect the `docker-compose.yml` in the `step01` folder, and see the exact services we'll be running.
 
@@ -18,4 +20,10 @@ With the services up, we should be able to view our services running on port 808
 
 https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com/
 
-After clicking the link, you should start to see traces come up. Let's see how this basic app works and it's instrumentation in the next step.
+After clicking the link, you should start to see traces come through in the Datadog UI. 
+
+Try adding words at the end of the url like 'world' and see what happesn:
+
+https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com/world
+
+Next, let's see how this basic app and instrumentation work.

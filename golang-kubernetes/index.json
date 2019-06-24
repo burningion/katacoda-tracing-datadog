@@ -12,7 +12,7 @@
     },
     "environment": {
       "uilayout": "editor-terminal",
-      "uieditorpath": "/hipster-shop",
+      "uieditorpath": "/golang-playground",
       "showdashboard": true,
       "dashboards": [{"name": "First Service", "port": 8080}]
     },
