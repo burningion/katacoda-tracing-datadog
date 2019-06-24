@@ -14,9 +14,9 @@
       "uilayout": "editor-terminal",
       "uieditorpath": "/hipster-shop",
       "showdashboard": true,
-      "dashboards": [{"name": "Hipster Shop", "port": 30001}]
+      "dashboards": [{"name": "First Service", "port": 8080}]
     },
     "backend": {
-      "imageid": "kubernetes-cluster-running"
+      "imageid": "datadog-ubuntu"
     }
   }

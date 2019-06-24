@@ -1,28 +1,21 @@
-# Deploying Our Application to Kubernetes
+# Starting Our Microservices with Docker Compose
 
-The workshop already has an application ready to be deployed to kubernetes included.
+Before we dive into Kubernetes, we'll first instrument our application using `docker-compose`. Using `docker-compose` will allow us to simplify our environment, ensuring we focus on instrumentation, before jumping into a live Kubernetes cluster.
 
-First, ensure your kubernetes cluster has been initialized, and both nodes have been added. You can do this by running `kubectl get nodes` in host1.
+We can inspect the `docker-compose.yml` in the `step01` folder, and see the exact services we'll be running.
 
-On host1, change into the YAML file directory with a `cd kubernetes-manifests`. You should be able to `ls` and see the YAML files for every service we plan on running in our cluster.
+Let's first bring everything up with the following command:
 
-First, add your Datadog API key to the secrets. You can do this with a:
+`DD_API_KEY=<api key> docker-compose up`{{copy}}
 
-```bash
-$ kubectl create secret generic datadog-api --from-literal=token=<YOUR_DATADOG_API_KEY>
-```
+If you get a error: 
 
-Once that's done, we'll next need to create a secret username and password for our PostgreSQL database.
+`cannot send spans to agent:8126: [Errno -2] Name does not resolve` 
 
-```bash
-$ kubectl create secret generic postgres-user --from-literal=token=postgres
-$ kubectl create secret generic postgres-password --from-literal=token=<YOUR_PASSWORD>
-```
+Make sure you entered your `DD_API_KEY`. 
 
-Finally, spin up the Datadog Agent container, so we can see our Nodes in the Datadog app:
+With the services up, we should be able to view our services running on port 8080 in the web browser here: 
 
-```bash
-$ kubectl apply -f datadog-agent.yaml
-```
+https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com/
 
-You should now be able to see your cluster inside of Datadog. Verify this before continuing on to the next step.
+After clicking the link, you should start to see traces come up. Let's see how this basic app works and it's instrumentation in the next step.
