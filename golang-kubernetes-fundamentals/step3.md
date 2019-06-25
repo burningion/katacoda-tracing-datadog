@@ -5,8 +5,6 @@ If we open our `docker-compose.yml` file in the editor, we can see there are a f
 Let's run through the ones that are relevant to setting up the Datadog Agent first:
 
 ```
-  agent:
-    image: "datadog/agent:6.11.3"
     environment:
       - DD_API_KEY
       - DD_APM_ENABLED=true
