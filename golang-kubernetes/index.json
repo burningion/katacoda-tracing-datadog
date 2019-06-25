@@ -7,6 +7,10 @@
           "title": "Step 1",
           "text": "step1.md",
           "courseData": "foreground.sh"
+        },
+        {
+          "title": "Step 2",
+          "text": "step2.md",
         }
       ]
     },
