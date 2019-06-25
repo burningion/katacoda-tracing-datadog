@@ -6,7 +6,7 @@ Using `docker-compose` when starting will allow us to simplify our environment, 
 
 We can inspect the `docker-compose.yml` in the `step01` folder, and see the exact services we'll be running.
 
-`cd /golang-playground`{{execute}}
+`cd /golang-playground/step01`{{execute}}
 
 Let's first bring everything up with the following command:
 
