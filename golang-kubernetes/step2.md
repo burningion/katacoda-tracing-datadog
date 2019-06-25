@@ -26,6 +26,6 @@ If we look a bit further up in our imports, we also see a logger has been added.
 
 Jump to the Datadog Live Tail Page under Logs and try reloading the page below. We shoulde also see the logs show up.
 
-https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com/
+https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/
 
 Next, let's look into the `docker-compose.yml`, and see all the configuration for sending logs and traces in one place.

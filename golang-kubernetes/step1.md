@@ -18,12 +18,12 @@ Make sure you entered your `DD_API_KEY`.
 
 With the services up, we should be able to view our services running on port 8080 in the web browser here: 
 
-https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com/
+https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/
 
 After clicking the link, you should start to see traces come through in the Datadog UI. 
 
 Try adding words at the end of the url like 'world' and see what happesn:
 
-https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com/world
+https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/world
 
 Next, let's see how this basic app and instrumentation work.
