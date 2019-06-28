@@ -20,4 +20,6 @@ This is much simpler! We just link the network to the `agent` container, so it's
 
 Finally, we label our logs as coming from Go, and name the service that's shipping the logs.
 
-Our `env` parameter set in the Agent insures we are in the same namespace, so we don't need to re set it.
+Our `env` parameter set in the Agent ensures all containers running on our machine are in the same namespace, so we don't need to re-set it in the application container.
+
+Now that we have an idea how instrumentation works, let's dive deeper and see how APM, logs, and metrics can help us build a complete system for diagnosing applications in production.
