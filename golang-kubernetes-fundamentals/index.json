@@ -23,6 +23,10 @@
         {
           "title": "Simplifying our Instrumentation",
           "text": "step5.md"
+        },
+        {
+          "title": "Instrumenting During Development",
+          "text": "step6.md"
         }
       ]
     },
