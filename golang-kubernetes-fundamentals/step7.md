@@ -19,3 +19,11 @@ https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/worl
 Now, if we look at the Datadog APM UI, we can see our traces as they cross services, along with the logs for both the `frontend` and `super-service` for each request in one view:
 
 ![Trace View](../assets/distributed-trace-go.gif)
+
+With our added services, we can also jump over into the service map, and visualize how requests get routed through our application:
+
+![Service Map](../assets/service-map-go.gif)
+
+Jumping back and forth between the service map and services, we're starting to see how APM gives us visibility into our services themselves, beyond just the underlying hardware and resource usage and statistics.
+
+Now that we've got a solid foundation for how APM works to build cross service visibility, let's add kubernetes and an existing distributed system to see how observability helps in practice.
