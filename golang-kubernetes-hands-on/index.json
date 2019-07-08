@@ -1,0 +1,37 @@
+{
+  "title": "Golang Kubernetes Part 2",
+  "description": "Microservices Instrumented with Datadog on Kubernetes",
+  "details": {
+      "steps": [
+        {
+          "title": "Step 1",
+          "text": "step1.md"
+        },
+        {
+          "title": "Step 2",
+          "text": "step2.md"
+        },
+        {
+          "title": "Step 3",
+          "text": "step3.md"
+        }
+      ],
+      "intro": {
+        "text": "intro.md",
+        "code": "foreground.sh",
+        "courseData": "background.sh"
+      },
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "environment": {
+      "uilayout": "editor-terminal",
+      "uieditorpath": "/tracing-workshop",
+      "showdashboard": true,
+      "dashboards": [{"name": "IoT Project", "port": 30001}]
+    },
+    "backend": {
+      "imageid": "datadog-kubernetes-cluster-running"
+    }
+  }
