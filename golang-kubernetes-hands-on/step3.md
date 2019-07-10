@@ -14,4 +14,8 @@ Along with the Traces port, we open port `8125` for UDP and DogstatsD. DogstatsD
 
 Popular custom metrics are things like user logins per minute, failed login attempts, orders placed, orders completed, etc. Custom metrics allow you to build dashboards more relevant to the systems of your business.
 
-Just as we did in our `docker-compose`, we set a `env` tag in our environment variables. Setting this tag works just as before, allowing us to define the environment within which we want all of our servers to live together in Datadog.
+Just as we did in our `docker-compose`, we set a `env` tag in our environment variables. 
+
+Setting this tag works just as before, allowing us to define the environment within which we want all of our servers to live together in Datadog.
+
+This way, we can separate out our infrastructure into units that make sense for us. Think of the difference between staging and production. Or maybe you have different regions your data lives within. Setting an `env` tag allows you to view logically separate infrastructures within Datadog.
