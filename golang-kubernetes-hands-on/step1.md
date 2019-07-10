@@ -1,4 +1,4 @@
-# Deploying Our Application to Kubernetes
+# Deploying Our Legacy Applications to Kubernetes
 
 The workshop already has an application ready to be deployed to kubernetes included.
 
