@@ -16,4 +16,6 @@ Let's jump into it and get a feel for where we might want to create our first re
 
 Looking at the source code, I notice that both the `/generate_requests` and `/generate_requests_user` are called via a `subprocess.call` function.
 
-This spawns a shell for every request and doesn't look great. Let's write a service to replace this with Golang, and add better visibility across the requests.
+This spawns a shell for every request and doesn't look great. Let's write a web service to replace this with Golang, and add better visibility across the requests.
+
+We'll use our existing Golang application from the first part of this lesson, and add endpoints for those requests.
