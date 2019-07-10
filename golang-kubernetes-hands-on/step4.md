@@ -10,4 +10,10 @@ Now that we've seen a bit of a high level for how our services are working or no
 
 If we hop into the Service List for the `frontend-service`, we can see all of the URL endpoints along with latencies, etc.
 
-In this interactive course, we also have the source code the `frontend-service` image was built from. Let's jump into it and get a feel for how it might be replaced by a Golang service instead with our newfound knowledge of how to instrument an application.
+In this interactive course, we also have the source code the `frontend-service` image was built from. 
+
+Let's jump into it and get a feel for where we might want to create our first replacement service.
+
+Looking at the source code, I notice that both the `/generate_requests` and `/generate_requests_user` are called via a `subprocess.call` function.
+
+This spawns a shell for every request and doesn't look great. Let's write a service to replace this with Golang, and add better visibility across the requests.
