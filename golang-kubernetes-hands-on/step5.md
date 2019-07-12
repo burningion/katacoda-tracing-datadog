@@ -25,3 +25,7 @@ https://[[HOST_SUBDOMAIN]]-30002-[[KATACODA_HOST]].environments.katacoda.com/
 Looking at our source code, we should now see `pong` returned. Let's try `curl` at one of the API endpoints, and see if we can generate the proper requests:
 
 https://[[HOST_SUBDOMAIN]]-30002-[[KATACODA_HOST]].environments.katacoda.com/generate_requests_user
+
+If we jump into the Datadog UI now, we should be able to hop into the Trace List and see the `go-conccurent-service` generating a bunch of `http.request`s. Click into one of the traces to see how the distributed trace looks, hoping from our new Golang service into the Users API.
+
+Now that we've settled in on a working replacement service, it's time to deploy it on to our Frontend API. Let's do that next.
