@@ -1,4 +1,4 @@
-# Instrumenting Services within Kubernetes
+# Instrumenting Kubernetes with the Datadog Agent
 
 Let's start by viewing the Datadog Agent's configuration.
 
