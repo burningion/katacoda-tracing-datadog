@@ -10,12 +10,18 @@ We'll use our existing Golang application from the first part of this lesson as 
 
 Let's create a concurrent request generator using our existing application, Goroutines and the `http` library's `MaxConnsPerHost`. For reference, the docs are [here](https://golang.org/pkg/net/http/#Transport).
 
-If you `cd ../concurrent-requests-generator`, you should be able to see our code. Alternatively, you can also just navigate to the directory with the file browser on the right.
+If you `cd ../golang-concurrent-generator/`, you should be able to see our replacement Golang service. 
 
-We can now test that our service is up and running with a `curl`:
+Type `ls`, and see that we've got a `concurrent-requests.yaml` file for Kubernetes. Let's add it to the existing cluster with a:
+
+`$ kubectl apply -f concurrent-requests.yaml`
+
+We can also navigate to the replacement service directory with the file browser on the right.
+
+Once the pod comes up, we can test our service with a `curl` or click at the following URL:
 
 https://[[HOST_SUBDOMAIN]]-30002-[[KATACODA_HOST]].environments.katacoda.com/
 
-Looking at our source code, we should now see `pong` returned. Let's try `curl`, and see if we can generate the proper requests:
+Looking at our source code, we should now see `pong` returned. Let's try `curl` at one of the API endpoints, and see if we can generate the proper requests:
 
 https://[[HOST_SUBDOMAIN]]-30002-[[KATACODA_HOST]].environments.katacoda.com/generate_requests_user

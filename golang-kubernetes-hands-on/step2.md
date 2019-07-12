@@ -16,6 +16,8 @@ Make sure you can visit your services by viewing the link below:
 
 https://[[HOST_SUBDOMAIN]]-30001-[[KATACODA_HOST]].environments.katacoda.com/
 
+If nothing loads, again, check to make sure all the pods came up with a `kubectl get pods`. Once they're all in the `Running` state, you should be able to hit the URL.
+
 In the editor to the right, you should be able to also navigate to the `k8s-yaml-files` directory, and see your YAML files you've deployed.
 
 Next, let's take a closer look at our YAML files, and see how we've instrumented our application.
