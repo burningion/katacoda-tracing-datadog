@@ -18,6 +18,8 @@ https://[[HOST_SUBDOMAIN]]-30001-[[KATACODA_HOST]].environments.katacoda.com/
 
 If nothing loads, again, check to make sure all the pods came up with a `kubectl get pods`. Once they're all in the `Running` state, you should be able to hit the URL.
 
+You can ensure your application and all the microservices are running properly by verifying that there are at least the 3 pumps visible by default. If there is just one, a piece of your deployment is still not deployed.
+
 In the editor to the right, you should be able to also navigate to the `k8s-yaml-files` directory, and see your YAML files you've deployed.
 
 Next, let's take a closer look at our YAML files, and see how we've instrumented our application.

@@ -2,6 +2,10 @@
 
 The workshop already has an application ready to be deployed to kubernetes included.
 
+It's a Python and Node microservices application. Today, we'll be focusing on replacing one of the pieces with a Golang service.
+
+So let's get the Kubernetes cluster up and running, along with Datadog as a DaemonSet.
+
 First, ensure your kubernetes cluster has been initialized, and both nodes have been added. You can do this by running `kubectl get nodes` in host1.
 
 On host1, change into the YAML file directory with a `cd k8s-yaml-files`. You should be able to `ls` and see the YAML files for every service we plan on running in our cluster.
