@@ -1,0 +1,29 @@
+{
+  "title": "Spring Petclinic",
+  "description": "Testing Out Spring Petclinic",
+  "details": {
+      "steps": [
+        {
+          "title": "Step 1",
+          "text": "step1.md"
+        }
+      ],
+      "intro": {
+        "text": "intro.md",
+        "code": "foreground.sh",
+        "courseData": "background.sh"
+      },
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "environment": {
+      "uilayout": "vscode",
+      "uieditorpath": "/petclinic",
+      "showdashboard": true,
+      "dashboards": [{"name": "Petclinic", "port": 8080}]
+    },
+    "backend": {
+      "imageid": "vscode"
+    }
+  }
