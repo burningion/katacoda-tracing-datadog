@@ -1,0 +1,29 @@
+{
+  "title": "Ecommerce Observability",
+  "description": "Real world Observability with Datadog",
+  "details": {
+      "steps": [
+        {
+          "title": "Step 1",
+          "text": "step1.md"
+        }
+      ],
+      "intro": {
+        "text": "intro.md",
+        "code": "foreground.sh",
+        "courseData": "background.sh"
+      },
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "environment": {
+      "uilayout": "editor-terminal",
+      "uieditorpath": "/ecommerce-observability",
+      "showdashboard": true,
+      "dashboards": [{"name": "storedog", "port": 3000}]
+    },
+    "backend": {
+      "imageid": "datadog-ubuntu"
+    }
+  }
