@@ -24,6 +24,6 @@
       "dashboards": [{"name": "storedog", "port": 3000}]
     },
     "backend": {
-      "imageid": "datadog-ubuntu"
+      "imageid": "ubuntu"
     }
   }
