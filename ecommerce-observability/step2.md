@@ -26,3 +26,20 @@ Let's add the Datadog Agent to our `docker-compose.yml`, and begin instrumenting
       com.datadoghq.ad.logs: '[{"source": "datadog-agent", "service": "agent"}]'
 ```
 
+With this, we've added volumes to see the resource usage on our host, along with the Docker socket so we can read the containers running on the host.
+
+We've also added a `DD_API_KEY`, along with enabling logs and the process Agent. Finally, we've opened the port `8126`, where traces get shipped to for collection at the Agent level.
+
+We can now rerun our application with our `DD_API_KEY` with the following command:
+
+```
+$ POSTGRES_USER=postgres POSTGRES_PASSWORD= DD_API_KEY=<YOUR_API_KEY> docker-compose up
+```
+
+Alternately, just do an:
+
+```
+$ export DD_API_KEY=<YOUR_API_KEY>
+```
+
+And with that, we should start to see info coming in to Datadog.
