@@ -12,11 +12,13 @@ Our application should be cloned from Github in this scenario, and if we change 
 
 ```
 $ cd /ecommerce-observability
-$ POSTGRES_USER=postgres POSTGRES_PASSWORD= docker-compose up
+$ POSTGRES_USER=postgres POSTGRES_PASSWORD=  docker-compose up
 ```
 
 Once our images are pulled, we should be able to jump into and view the application within Katacoda:
 
 https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/
 
-Try browsing around, and notice the homepage takes an especially long time to load. The first thing we'll do is see where that slow load time may be coming from.
+Try browsing around, and notice the homepage takes an especially long time to load. 
+
+The first thing we'll do is see where that slow load time may be coming from.
