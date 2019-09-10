@@ -1,6 +1,16 @@
 # Debugging Our Application with APM
 
-Now that we've instrumented all of our code, let's take a look at the issues we've come across since the new team rolled out their first microservice, the `advertisements-service`.
+Now that we've instrumented all of our code, let's spin up some traffic so we can get a better look at what may be happening.
+
+In our `/ecommerce-observability` folder, we've got a copy of [GoReplay](https://goreplay.org).
+
+We've also got a capture of traffic using GoReplay. Let's spin up an infinite loop of that traffic:
+
+```
+$ ./gor --input-file-loop --input-file requests_0.gor --output-http "http://localhost:3000"
+```
+
+Once we spin up that traffic with our included observability, we can now take a look at the issues we've come across since the new team rolled out their first microservice, the `advertisements-service`.
 
 Before instrumenting with Datadog, there'd been reports that the new `advertisements-service` broke the website. With the new deployment on staging, the `frontend` team has blamed the `ads-service` team, and the `advertisements-service` team has blamed the ops team.
 
