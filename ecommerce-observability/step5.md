@@ -28,7 +28,22 @@ If we look into the service, we can see that it's been laid out by views. There'
 
 It seems the problem happens in a template. Let's get rid of that part of the template so we can get the site back up and running while figuring out what happened.
 
-Open `sandbox/app/views/spree/layouts/spree_application.html.erb` and delete the line under `<div class="container">`.
+Open `sandbox/app/views/spree/layouts/spree_application.html.erb` and delete the line under `<div class="container">`. It should begin with a `<br />` and end with a `</center>`.
+
+The banner ads were meant to be put under `sandbox/app/views/spree/products/show.html.erb` and `sandbox/app/views/spree/home/index.html.erb`.
+
+For the `index.html.erb`, under `<div data-hook="homepage_products">` add the code:
+
+```ruby
+<br /><center><a href="<%= @ads['url'] %>"><img src="data:image/png;base64,<%= @ads['base64'] %>" /></a></center>
+
+```
+
+And for the `show.html.erb` at the very bottom add:
+
+```ruby 
+<br /><center><a href="<%= @ads['url'] %>"><img src="data:image/png;base64,<%= @ads['base64'] %>" /></a></center><br />
+```
 
 With that, our project should be up and running. Let's see if there's anything else going on.
 
