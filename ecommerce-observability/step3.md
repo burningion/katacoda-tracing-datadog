@@ -6,7 +6,7 @@ Depending on the language your application runs in, you may have a different pro
 
 In our case, our applications run on [Ruby on Rails]() and Python's [Flask](). We'll instrument each language differently.
 
-For Ruby on Rails, we need to first add the `ddtrace` Gem to our Gemfile. Take a look at `sandbox/Gemfile` in the Katacoda file explorer.
+For Ruby on Rails, we need to first add the `ddtrace` Gem to our Gemfile. Take a look at `store-frontend/Gemfile` in the Katacoda file explorer.
 
 Because we plan on also consuming logs from Rails and correlating them with traces, we've also added `logging-rails` and `lograge`. Both of these are documented on the Ruby [trace / logs]() correlation part of the documentation.
 
