@@ -12,7 +12,7 @@ $ ./gor --input-file-loop --input-file requests_0.gor --output-http "http://loca
 
 Once we spin up that traffic with our included observability, we can now take a look at the issues we've come across since the new team rolled out their first microservice, the `advertisements-service`.
 
-Before instrumenting with Datadog, there'd been reports that the new `advertisements-service` broke the website. With the new deployment on staging, the `frontend` team has blamed the `ads-service` team, and the `advertisements-service` team has blamed the ops team.
+Before we began instrumenting with Datadog, there'd been reports that the new `advertisements-service` broke the website. With the new deployment on staging, the `frontend` team has blamed the `ads-service` team, and the `advertisements-service` team has blamed the ops team.
 
 Now that we've got Datadog and APM instrumented in our code, let's see what's really been breaking our application.
 

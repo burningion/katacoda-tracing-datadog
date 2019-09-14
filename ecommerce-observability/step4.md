@@ -33,4 +33,18 @@ As for configuring this instrumentation, we can do it via environment variables 
 
 With this, we've connected and instrumented all of our services to APM.
 
+The last thing we need to add is a _label_ to our container, so our logs are shipped with the label of the service, and with the proper language processor:
+
+```
+    labels:
+      com.datadoghq.ad.logs: '[{"source": "python", "service": "discounts-service"}]'
+```
+
+And:
+
+```
+    labels:
+      com.datadoghq.ad.logs: '[{"source": "python", "service": "ads-service"}]'
+```
+
 Next, let's take a closer look at _why_ and _where_ our application may be failing.
