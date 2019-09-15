@@ -2,6 +2,8 @@
 
 Now that we've instrumented all of our code, let's spin up some traffic so we can get a better look at what may be happening.
 
+## Spinning up Traffic for Our Site
+
 In our `/ecommerce-observability` folder, we've got a copy of [GoReplay](https://goreplay.org).
 
 We've also got a capture of traffic using GoReplay. Let's spin up an infinite loop of that traffic:
@@ -15,6 +17,8 @@ Once we spin up that traffic with our included observability, we can now take a 
 Before we began instrumenting with Datadog, there'd been reports that the new `advertisements-service` broke the website. With the new deployment on staging, the `frontend` team has blamed the `ads-service` team, and the `advertisements-service` team has blamed the ops team.
 
 Now that we've got Datadog and APM instrumented in our code, let's see what's really been breaking our application.
+
+## Debugging an Application with Datadog
 
 The first place we can check is the Service Map, to get an idea for our current infrastructure and microservice dependencies.
 
