@@ -33,7 +33,7 @@ We've also added a `DD_API_KEY`, along with enabling logs and the process Agent.
 We can now rerun our application with our `DD_API_KEY` with the following command:
 
 ```
-$ POSTGRES_USER=postgres POSTGRES_PASSWORD= DD_API_KEY=<YOUR_API_KEY> docker-compose up
+$ POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres DD_API_KEY=<YOUR_API_KEY> docker-compose up
 ```
 
 Alternately, just do an:

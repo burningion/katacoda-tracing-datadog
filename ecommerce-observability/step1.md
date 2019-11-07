@@ -12,7 +12,7 @@ Our application should be cloned from Github in this scenario, and if we change 
 
 ```
 $ cd /ecommerce-observability
-$ POSTGRES_USER=postgres POSTGRES_PASSWORD=  docker-compose up
+$ POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres  docker-compose up
 ```
 
 Once our images are pulled, we should be able to jump into and view the application within Katacoda:
