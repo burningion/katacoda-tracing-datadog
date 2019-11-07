@@ -22,13 +22,19 @@ Now that we've got Datadog and APM instrumented in our code, let's see what's re
 
 The first place we can check is the Service Map, to get an idea for our current infrastructure and microservice dependencies.
 
+![Datadog Service Map](../assets/ecommerce/service-map.png)
+
 In doing so, we can tell that we've got two microservices that our frontend calls, a `discounts-service`, along with an `advertisements-service`.
 
 If we click in to view our Service Overview in Datadog, we can see that our API itself isn't throwing any errors. The errors must be happening on the frontend.
 
+![Services List](../assets/ecommerce/problematic-service.gif)
+
 So let's take a look at the frontend service, and see if we can find the spot where things are breaking.
 
 If we look into the service, we can see that it's been laid out by views. There's at least one view that seems to only give errors. Let's click into that view and see if a trace from that view can tell us what's going on.
+
+![Problematic Traces](../assets/ecommerce/500-trace-errors.gif)
 
 It seems the problem happens in a template. Let's get rid of that part of the template so we can get the site back up and running while figuring out what happened.
 

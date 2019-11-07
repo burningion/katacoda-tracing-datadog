@@ -4,6 +4,8 @@ With the Service List, we can see at a quick glance see endpoints that are runni
 
 If we look at the Frontend Service, we can see there are two endpoints in particular that are substantially slower than the rest. 
 
+![Slow Services](../assets/ecommerce/bottleneck.gif)
+
 Both the `HomeController#index` and the `ProductController#show` enpoints are showing _much_ longer latency times. If we click in, and view a trace, we'll see that we've got downstream microservices taking up a substantial portion of our load time.
 
 Use the span list to see where it may be, and we can then take a look at each of the downstream services and where things may be going wrong.
@@ -14,4 +16,4 @@ Looking at the code, it appears we've accidentally left a line in from testing w
 
 Try spotting the line and removing the code to see if you can bring the latency down again for the application.
 
-What sort of an improvement in page load time did it give you?
+What sort of an improvement in page load time did it give you? Can you graph the differences over time?
