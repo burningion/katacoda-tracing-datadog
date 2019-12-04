@@ -1,6 +1,6 @@
 # How to Grok an Application with Datadog
 
-Whenever working with new code, it can be daunting to understand a system and how it all comes together.
+Whenever working with new code, it can be daunting to understand a system and how it all interacts together together.
 
 Our Datadog instrumentation allows us to get an immediate insight into what's going on with the code. 
 
@@ -33,13 +33,8 @@ We've also added a `DD_API_KEY`, along with enabling logs and the process Agent.
 We can now rerun our application with our `DD_API_KEY` with the following command:
 
 ```
-$ POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres DD_API_KEY=<YOUR_API_KEY> docker-compose up
-```
-
-Alternately, just do an:
-
-```
 $ export DD_API_KEY=<YOUR_API_KEY>
+$ POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres docker-compose up
 ```
 
 And with that, we should start to see info coming in to Datadog.

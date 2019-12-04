@@ -1,10 +1,10 @@
 # Spinning Up Our Legacy E-Commerce Shop
 
-Our legacy shop uses Ruby on Rails and Spree. 
+Our legacy monolith shop uses Ruby on Rails and Spree. We've started to build out a first set of microservices, and these have been added to an initial set of containres.
 
-We use `docker-compose` to bring it up and running. There's a prebuilt Rails Docker container image, along with a few Python / Flask microservice which handle our Coupon codes and Ads which run on the store.
+We use `docker-compose` to bring it up and running. There's a prebuilt Rails Docker container image, along with the new Python / Flask microservice which handle our Coupon codes and Ads which display in the store.
 
-In this workshop, we're going to spin up and instrument our application to see where bottlenecks exist.
+In this workshop, we're going to spin up and instrument our application to see where things are broken, and next, find a few bottlenecks.
 
 We'll focus on thinking through what observability might make sense in a real application, and see how setting up observability works in practice.
 
