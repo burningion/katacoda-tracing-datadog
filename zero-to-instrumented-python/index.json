@@ -1,0 +1,42 @@
+{
+  "title": "Zero to Instrumented in Python",
+  "description": "Zero to Instrumented in Python with Datadog APM",
+  "details": {
+      "steps": [
+        {
+          "title": "Step 1",
+          "text": "step1.md"
+        },
+        {
+          "title": "Step 2",
+          "text": "step2.md"
+        },
+        {
+          "title": "Step 3",
+          "text": "step3.md"
+        },
+        {
+          "title": "Step 4",
+          "text": "step4.md"
+        }
+
+      ],
+      "intro": {
+        "text": "intro.md",
+        "code": "foreground.sh",
+        "courseData": "background.sh"
+      },
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "environment": {
+      "uilayout": "editor-terminal",
+      "uieditorpath": "/ecommerce-observability",
+      "showdashboard": true,
+      "dashboards": [{"name": "storedog", "port": 3000}]
+    },
+    "backend": {
+      "imageid": "ubuntu"
+    }
+  }
