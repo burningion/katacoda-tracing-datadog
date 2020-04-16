@@ -32,9 +32,9 @@
     },
     "environment": {
       "uilayout": "editor-terminal",
-      "uieditorpath": "/ecommerce-observability",
+      "uieditorpath": "/bling-bling-api",
       "showdashboard": true,
-      "dashboards": [{"name": "storedog", "port": 3000}]
+      "dashboards": [{"name": "bling-bling-api", "port": 3000}]
     },
     "backend": {
       "imageid": "ubuntu"

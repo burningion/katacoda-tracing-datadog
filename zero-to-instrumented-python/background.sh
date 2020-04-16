@@ -1,4 +1,4 @@
 #!/bin/bash
-mkdir /ecommerce-observability
-git clone https://github.com/burningion/ecommerce-observability /ecommerce-observability
-cd /ecommerce-observability && git checkout no-instrumentation
+mkdir /bling-bling
+git clone https://github.com/burningion/bling-bling-api /bling-bling-api
+cd /bling-bling-api
