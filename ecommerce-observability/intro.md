@@ -1,6 +1,6 @@
 # Real World Observability with Datadog
 
-In this workshop, we'll apply observability principles to a partially broken eCommerce app that has started the move to microservices.
+In this workshop, we'll apply a few observability principles to a partially broken eCommerce app that has started the move to microservices.
 
 We'll first run the app, then instrument it with Datadog. Next, we'll send some example traffic to it, and try to discover the parts that are broken.
 
