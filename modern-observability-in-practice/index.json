@@ -1,0 +1,56 @@
+{
+  "title": "Modern Observability in Practice with APM",
+  "description": "Tools and techniques to improve deployment in distributed software systems",
+  "details": {
+      "steps": [
+        {
+          "title": "Our Broken Legacy Web Application",
+          "text": "step1.md"
+        },
+        {
+          "title": "How to Grok an Application with Datadog",
+          "text": "step2.md"
+        },
+        {
+          "title": "Estabilishing A Baseline for Systems",
+          "text": "step3.md"
+        },
+        {
+          "title": "Discovering Bottlenecks",
+          "text": "step4.md"
+        },
+        {
+          "title": "Deploying and Quantifying Improvements",
+          "text": "step5.md"
+        },
+        {
+          "title": "Communicating Observability Practices to Your Team",
+          "text": "step6.md"
+        },
+        {
+          "title": "Thinking About Business Metrics",
+          "text": "step7.md"
+        }
+      ],
+      "intro": {
+        "text": "intro.md",
+        "code": "foreground.sh",
+        "courseData": "background.sh"
+      },
+      "finish": {
+        "text": "finish.md"
+      }
+  },
+    "files": [
+        "/ecommerce-observability/docker-compose-files/docker-compose-broken-no-instrumentation.yml"
+    ],
+    "environment": {
+      "uilayout": "editor-terminal",
+      "uieditorpath": "/ecommerce-observability",
+      "showdashboard": true,
+      "dashboards": [{"name": "storedog", "port": 3000}]
+    },
+    "backend": {
+      "imageid": "ubuntu"
+    }
+  }
