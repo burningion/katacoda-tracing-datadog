@@ -8,7 +8,7 @@ Let's add the Datadog Agent to our `docker-compose.yml`, and begin instrumenting
 
 ```
   agent:
-    image: "datadog/agent:7.13.0"
+    image: "datadog/agent:7.21.0"
     environment:
       - DD_API_KEY
       - DD_APM_ENABLED=true
