@@ -11,8 +11,8 @@ We'll focus on thinking through what observability might make sense in a real ap
 Our application should be cloned from Github in this scenario, and if we change into the directory, we should be able to start the code with the following:
 
 ```
-$ cd /ecommerce-observability
-$ POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres  docker-compose up
+$ cd /ecommerce-observability/docker-compose-files
+$ POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres  docker-compose -f docker-compose-broken-no-instrumentation.yml up
 ```
 
 Once our images are pulled, we should be able to jump into and view the application within Katacoda:

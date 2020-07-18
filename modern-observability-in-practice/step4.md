@@ -30,7 +30,6 @@ Automatic instrumentation is done via environment variables in our `docker-compo
       - DATADOG_SERVICE_NAME=advertisements-service
       - DATADOG_TRACE_AGENT_HOSTNAME=agent
       - DD_LOGS_INJECTION=true
-      - DD_ANALYTICS_ENABLED=true
 ```
 
 With this, we've connected and instrumented all of our services to APM.
@@ -55,8 +54,7 @@ We can repeat the process, and fill out the settings for the `discounts-service`
       - DATADOG_SERVICE_NAME=discounts-service
       - DATADOG_TRACE_AGENT_HOSTNAME=agent
       - DD_LOGS_INJECTION=true
-      - DD_ANALYTICS_ENABLED=true
-    image: "burningion/ecommerce-spree-discounts:latest"
+    image: "ddtraining/discounts-service:latest"
     command: ddtrace-run flask run --port=5001 --host=0.0.0.0
     ports:
       - "5001:5001"

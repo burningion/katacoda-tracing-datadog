@@ -38,11 +38,11 @@ If we look into the service, we can see that it's been laid out by views. There'
 
 It seems the problem happens in a template. Let's get rid of that part of the template so we can get the site back up and running while figuring out what happened.
 
-Open `store-frontend/app/views/spree/layouts/spree_application.html.erb` and delete the line under `<div class="container">`. It should begin with a `<br />` and end with a `</center>`.
+Our developers can see that they'll need to open `store-frontend/app/views/spree/layouts/spree_application.html.erb` and delete the line under `<div class="container">`. It should begin with a `<br />` and end with a `</center>`.
 
-The banner ads were meant to be put under `store-frontend/app/views/spree/products/show.html.erb` and `store-frontend/app/views/spree/home/index.html.erb`.
+In this case, the banner ads were meant to be put under `store-frontend/app/views/spree/products/show.html.erb` and `store-frontend/app/views/spree/home/index.html.erb`.
 
-For the `index.html.erb`, under `<div data-hook="homepage_products">` add the code:
+For the `index.html.erb`, under `<div data-hook="homepage_products">` our developers would add the code:
 
 ```ruby
 <br /><center><a href="<%= @ads['url'] %>"><img src="data:image/png;base64,<%= @ads['base64'] %>" /></a></center>
@@ -54,6 +54,8 @@ And for the `show.html.erb` at the very bottom add:
 ```ruby 
 <br /><center><a href="<%= @ads['url'] %>"><img src="data:image/png;base64,<%= @ads['base64'] %>" /></a></center><br />
 ```
+
+We can assume our developers have done that, and deploy the code changes with our new Docker image name, `ddtraining/ecommerce-frontend`.
 
 With that, our project should be up and running. Let's see if there's anything else going on.
 
