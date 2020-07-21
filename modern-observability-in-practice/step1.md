@@ -21,6 +21,6 @@ https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/
 
 Try browsing around, and notice the homepage takes a very long time to load. 
 
-![storedog](/modern-observability-in-practice/assets/ecommerce/storedog.png)
+![storedog](modern-observability-in-practice/assets/ecommerce/storedog.png)
 
 Next, let's instrument our application with Datadog and see where the slow page load is coming from.
