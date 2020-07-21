@@ -34,7 +34,7 @@ So let's take a look at the frontend service, and see if we can find the spot wh
 
 If we look into the service, we can see that it's been laid out by views. There's at least one view that seems to only give errors. Let's click into that view and see if a trace from that view can tell us what's going on.
 
-![Problematic Traces](../assets/ecommerce/500-trace-errors.gif)
+![Problematic Traces](./assets/ecommerce/500-trace-errors.gif)
 
 It seems the problem happens in a template. Let's get rid of that part of the template so we can get the site back up and running while figuring out what happened.
 
