@@ -4,7 +4,7 @@ With the Service List, we can see at a quick glance see endpoints that are runni
 
 If we look at the Frontend Service, we can see there are two endpoints in particular that are substantially slower than the rest. 
 
-![Slow Services](./assets/ecommerce/bottleneck.gif)
+![Slow Services](https://github.com/burningion/katacoda-tracing-datadog/raw/master/assets/ecommerce/bottleneck.gif)
 
 Both the `HomeController#index` and the `ProductController#show` enpoints are showing _much_ longer latency times. If we click in, and view a trace, we'll see that we've got downstream microservices taking up a substantial portion of our load time.
 
