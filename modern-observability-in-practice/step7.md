@@ -1,5 +1,3 @@
-# Thinking About Business Metrics
-
 With the Service List, we can see at a quick glance see endpoints that are running slower than the rest.
 
 If we look at the Frontend Service, we can see there are two endpoints in particular that are substantially slower than the rest. 
@@ -14,6 +12,8 @@ It seems two microservices in particular are being called for the homepage. If w
 
 Looking at the code, it appears we've accidentally left a line in from testing what happens if latency goes up.
 
-Try spotting the line and removing the code to see if you can bring the latency down again for the application.
+Delete the line of code, and we can see there's another problem. It looks like we've got a classic N+1 query on our `discounts-service`.
 
-What sort of an improvement in page load time did it give you? Can you graph the differences over time?
+It seems the last developer didn't realize the way they structured their code meant making multiple trips to the database when there shouldn't have been. 
+
+There should be a line of code which states what happened, with a fix. Edit the `discounts.py` file, and let's see if the changes written work.
