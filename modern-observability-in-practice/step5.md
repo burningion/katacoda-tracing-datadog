@@ -18,6 +18,11 @@ Before we began instrumenting with Datadog, there'd been reports that the new `a
 
 Now that we've got Datadog and APM instrumented in our code, let's see what's really been breaking our application.
 
+## Adding Monitors to Our Services
+
+When we click into each of the services we've configured in APM, we see some default suggestions for monitors. Let's add some of these monitors so we can tell whenour application isn't performing properly.
+
+
 ## Debugging an Application with Datadog
 
 The first place we can check is the Service Map, to get an idea for our current infrastructure and microservice dependencies.
