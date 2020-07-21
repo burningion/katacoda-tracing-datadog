@@ -19,8 +19,8 @@ Once our images are pulled, we should be able to jump into and view the applicat
 
 https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/
 
-Try browsing around, and notice the homepage takes an especially long time to load. 
+Try browsing around, and notice the homepage takes a very long time to load. 
 
 ![storedog](../assets/ecommerce/storedog.png)
 
-The first thing we'll do is see where that slow load time may be coming from.
+Next, let's instrument our application with Datadog and see where the slow page load is coming from.

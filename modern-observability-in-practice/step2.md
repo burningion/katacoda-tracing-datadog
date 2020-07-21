@@ -1,8 +1,8 @@
-# How to Grok an Application with Datadog
+# Grokking Software with Datadog
 
-Whenever working with new code, it can be daunting to understand a system and how it all interacts together together.
+Whenever working with new code, it can be daunting to understand a system and how all of its subsystems interact.
 
-Our Datadog instrumentation allows us to get an immediate insight into what's going on with the code. 
+Datadog instrumentation allows us to get an immediate insight into what's going on with our software systems. 
 
 Let's add the Datadog Agent to our `docker-compose.yml`, and begin instrumenting our application:
 
@@ -34,7 +34,7 @@ We can now rerun our application with our `DD_API_KEY` with the following comman
 
 ```
 $ export DD_API_KEY=<YOUR_API_KEY>
-$ POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres docker-compose up
+$ POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres docker-compose -f docker-compose-broken-instrumented.yml up
 ```
 
-And with that, we should start to see info coming in to Datadog.
+And with that, we should start to see info coming in to Datadog. Next, we'll ned to add the Datadog APM library to our application level languages, and set enviornment variables to correctly configure our application.

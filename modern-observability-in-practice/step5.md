@@ -55,8 +55,14 @@ And for the `show.html.erb` at the very bottom add:
 <br /><center><a href="<%= @ads['url'] %>"><img src="data:image/png;base64,<%= @ads['base64'] %>" /></a></center><br />
 ```
 
-We can assume our developers have done that, and deploy the code changes with our new Docker image name, `ddtraining/ecommerce-frontend`.
+We can assume our developers have done that, and deploy the code changes with our new Docker image name, `ddtraining/ecommerce-frontend:latest`.
 
-With that, our project should be up and running. Let's see if there's anything else going on.
+Edit the `https://github.com/DataDog/ecommerce-workshop/blob/master/docker-compose-files/docker-compose-broken-instrumented.yml`, changing the `frontend` service to point to the:
+
+```
+  image: "ddtraining/ecommerce-frontend:latest"
+```
+
+With that, we can spin up our project. Let's see if there's anything else going on.
 
 
