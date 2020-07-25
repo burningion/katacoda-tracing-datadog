@@ -1,3 +1,5 @@
+# Discovering a Suboptimal SQL Query
+
 With the Service List, we can see at a quick glance see endpoints that are running slower than the rest.
 
 If we look at the Frontend Service, we can see there are two endpoints in particular that are substantially slower than the rest. 
