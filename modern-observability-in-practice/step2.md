@@ -2,9 +2,9 @@
 
 Whenever working with new code, it can be daunting to understand a system and how all of its subsystems interact.
 
-Datadog instrumentation allows us to get an immediate insight into what's going on with our software systems. 
+Datadog instrumentation allows us to get an immediate insight into what's going on with our software systems, and begin exploring places that may need improvement. 
 
-Let's add the Datadog Agent to our `docker-compose.yml`, and begin instrumenting our application:
+If we open our `docker-compose-broken-instrumented.yml`, we can begin to understand how instrumentation is done with our application:
 
 ```
   agent:
@@ -26,15 +26,14 @@ Let's add the Datadog Agent to our `docker-compose.yml`, and begin instrumenting
       com.datadoghq.ad.logs: '[{"source": "datadog-agent", "service": "agent"}]'
 ```
 
-With this, we've added volumes to see the resource usage on our host, along with the Docker socket so we can read the containers running on the host.
+With this, we've added a Datadog Agent container, and along with it, volumes to see the resource usage on our host,  and the Docker socket so we can read all of the containers running on the host.
 
 We've also added a `DD_API_KEY`, along with enabling logs and the process Agent. Finally, we've opened the port `8126`, where traces get shipped to for collection at the Agent level.
 
-We can now rerun our application with our `DD_API_KEY` with the following command:
+If we run the `env` command in a new shell tab for our lab, we can see that our lab environment already has the Datadog API key injected into our scenario.
 
-```
-$ export DD_API_KEY=<YOUR_API_KEY>
-$ POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres docker-compose -f docker-compose-broken-instrumented.yml up
-```
+Speaking of which, there's also a line, `DD_TAGS='env:ruby-shop'`. In this line, we've set an `env` tag for Datadog. This allows us to filter to a specific environment, and make sure we don't pollute other environments while testing.
 
-And with that, we should start to see info coming in to Datadog. Next, we'll ned to add the Datadog APM library to our application level languages, and set enviornment variables to correctly configure our application.
+And with that, we should start to see info coming in to Datadog. Head over to the Logs Live Tail page, and see if you can find logs flowing into your account, now that the application has been running for a while.
+
+Next, if we were instrumenting an application from scratch, we'd need to add the Datadog APM library to our application level languages, and set environment variables to correctly configure our application.

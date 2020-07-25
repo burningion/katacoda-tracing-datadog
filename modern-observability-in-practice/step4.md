@@ -1,16 +1,16 @@
 # APM Automatic Instrumentation with Python
 
-Now that we've set up our Ruby on Rails application, we can now instrument our downstream Python services.
+Now that we've set up our main Ruby on Rails application, we can now instrument our downstream Python services.
 
 Looking at the [documentation](http://pypi.datadoghq.com/trace/docs/web_integrations.html#flask) for the Python tracer, we have a utility called `ddtrace-run`. 
 
-Wrapping our Python executable in a `ddtrace-run` allows us to spin up a running instance of our application fully instrumented with our tracer.
+Wrapping our Python executable in a `ddtrace-run` allows us to spin up a running instance of our application fully instrumented with our tracer, so long as our libraries are supported by `ddtrace`.
 
 For supported applications like Flask, `ddtrace-run` dramatically simplifies the process of instrumentation.
 
 ## Instrumenting the Advertisements Service
 
-In our `docker-compose-files/docker-compose-broken-no-instrumentation.yml` there's a command to bring up our Flask server. If we look, we'll see it's a:
+In our `docker-compose-files/docker-compose-broken-instrumented.yml` there's a command to bring up our Flask server. If we look, we'll see it's a:
 
 ```
 flask run --port=5002 --host=0.0.0.0
@@ -24,7 +24,7 @@ ddtrace-run flask run --port=5002 --host=0.0.0.0
 
 With this, we're ready to configure out application's instrumentation.
 
-Automatic instrumentation is done via environment variables in our `docker-compose-files/docker-compose-broken-no-instrumentation.yml`:
+Automatic instrumentation is done via environment variables in our `docker-compose-files/docker-compose-broken-instrumented.yml`:
 
 ```
       - DATADOG_SERVICE_NAME=advertisements-service
@@ -67,4 +67,4 @@ We can repeat the process, and fill out the settings for the `discounts-service`
       com.datadoghq.ad.logs: '[{"source": "python", "service": "discounts-service"}]'
 ```
 
-Next, let's take a closer look at _why_ and _where_ our application may be failing.
+Now that we've fully instrumented our application, let's take a closer look at _why_ and _where_ our application may be failing.

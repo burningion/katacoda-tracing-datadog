@@ -22,6 +22,7 @@ Now that we've got Datadog and APM instrumented in our code, let's see what's re
 
 When we click into each of the services we've configured in APM, we see some default suggestions for monitors. Let's add some of these monitors so we can tell whenour application isn't performing properly.
 
+In my case, I'm going to add the default, suggested `P90` latency monitors, so we can tell when things are taking too long to respond.
 
 ## Debugging an Application with Datadog
 

@@ -12,7 +12,7 @@ Our application should be cloned from Github in this scenario, and if we change 
 
 ```
 $ cd /ecommerce-observability/docker-compose-files
-$ POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres  docker-compose -f docker-compose-broken-no-instrumentation.yml up
+$ POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres  docker-compose -f docker-compose-broken-instrumented.yml up
 ```
 
 Once our images are pulled, we should be able to jump into and view the application within Katacoda:
@@ -23,4 +23,4 @@ Try browsing around, and notice the homepage takes a very long time to load.
 
 ![storedog](https://github.com/burningion/katacoda-tracing-datadog/raw/master/assets/ecommerce/storedog.png)
 
-Next, let's instrument our application with Datadog and see where the slow page load is coming from.
+Next, let's see how we instrument our application with Datadog and see where the slow page load is coming from.
