@@ -48,6 +48,8 @@
       "uilayout": "editor-terminal",
       "uieditorpath": "/ecommerce-observability",
       "showdashboard": true,
+      "hideHiddenFiles": true,
+      "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
       "dashboards": [{"name": "storedog", "port": 3000}]
     },
     "backend": {
