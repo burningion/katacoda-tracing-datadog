@@ -7,5 +7,3 @@ We'll first run the app, confirm that it's broken, and then instrument it with D
 Next, we'll send some example traffic to it, and try to discover the parts that are broken.
 
 Finally, we'll discover the line numbers to fix, along with a few bottlenecks written into the source, push a fix, and confirm that it is indeed fixed.
-
-You can run through this scenario with a trial Datadog account by signing up [here](https://www.datadoghq.com/).
