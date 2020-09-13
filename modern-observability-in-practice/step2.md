@@ -4,11 +4,11 @@ Whenever working with new code, it can be daunting to understand a system and ho
 
 Datadog instrumentation allows us to get an immediate insight into what's going on with our software systems, and begin exploring places that may need improvement. 
 
-If we open our `docker-compose-broken-instrumented.yml`, we can begin to understand how instrumentation is done with our application:
+If we open our `docker-compose-files/docker-compose-broken-instrumented.yml`{{open}}, we can begin to understand how instrumentation is done with our application:
 
 ```
   agent:
-    image: "datadog/agent:7.21.0"
+    image: "datadog/agent:7.21.1"
     environment:
       - DD_API_KEY
       - DD_APM_ENABLED=true
@@ -36,4 +36,4 @@ Speaking of which, there's also a line, `DD_TAGS='env:ruby-shop'`. In this line,
 
 And with that, we should start to see info coming in to Datadog. Head over to the Logs Live Tail page, and see if you can find logs flowing into your account, now that the application has been running for a while.
 
-Next, if we were instrumenting an application from scratch, we'd need to add the Datadog APM library to our application level languages, and set environment variables to correctly configure our application.
+Next, if we _were_ instrumenting an application from scratch, we'd need to add the Datadog APM library to each of our application level languages, and set environment variables to correctly configure our application.

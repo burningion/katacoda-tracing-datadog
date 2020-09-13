@@ -10,23 +10,22 @@ We'll instrument each language differently.
 
 ## Installing the APM Language Library
 
-For Ruby on Rails, we first add the `ddtrace` Gem to our Gemfile. Take a look at `store-frontend-broken-instrumented/Gemfile` in the Katacoda file explorer, and notice we've added the Gem so we can start shipping traces.
+For Ruby on Rails, we first added the `ddtrace` Gem to our Gemfile. Take a look at `store-frontend-broken-instrumented/store-frontend/Gemfile`{{open}} in the Katacoda file explorer, and notice we've added the Gem so we can start shipping traces.
 
-Because we plan on also consuming logs from Rails and correlating them with traces, we've also added `logging-rails` and `lograge`. Both of these are documented on the Ruby [trace / logs](https://docs.datadoghq.com/tracing/setup/ruby/#for-logging-in-rails-applications-using-lograge-recommended) correlation part of the documentation.
+Because we plan on also consuming logs from Rails and correlating them with traces, we've also added the `logging-rails` and `lograge` Gems. Both of these are documented on the Ruby [trace / logs](https://docs.datadoghq.com/tracing/setup/ruby/#for-logging-in-rails-applications-using-lograge-recommended) correlation part of the documentation.
 
 Once these are both added to the list of our application's requirements, we must then add a `datadog.rb` to the list of initializers.
 
-You'll find the file in `store-frontend-broken-instrumented/config/initializers/`.
+You'll find the file in `store-frontend-broken-instrumented/store-frontend/config/initializers/datadog.rb`{{open}}.
 
 There, we control a few settings:
 
 ```ruby
 Datadog.configure do |c|
   # This will activate auto-instrumentation for Rails
-  c.use :rails, {'analytics_enabled': true, 'service_name': 'store-frontend'}
+  c.use :rails, {'analytics_enabled': true, 'service_name': 'store-frontend', 'cache_service': 'store-frontend-cache', 'database_service': 'store-frontend-sqlite'}
   # Make sure requests are also instrumented
   c.use :http, {'analytics_enabled': true, 'service_name': 'store-frontend'}
-  c.tracer hostname: 'agent'
 end
 ```
 
@@ -34,9 +33,7 @@ We set `analytics_enabled` to be `true` for both our Rails auto instrumentation,
 
 This allows us to use Trace Search and Analytics from within Datadog.
 
-We then set a `hostname` for all our traces to be sent to. Because we set the Datadog Agent to listen on port `8126`, we set this to be the hostname available within our `docker-compose`.
-
-Finally, we set an environment for our traces. This allows us to separate different environments, for example, staging and production.
+By default, the Datadog Ruby APM library will ship traces to `localhost`, over port 8126. Because we're running within a `docker-compose`, we'll need to set an environment variable, `DD_AGENT_HOST`, for our Ruby library to know to ship to the Agent container instead.
 
 With this, our Ruby application is instrumented. We're also able to continue traces downstream, utilizing Distributed Traces.
 
@@ -44,7 +41,7 @@ With this, our Ruby application is instrumented. We're also able to continue tra
 
 To ship logs to Datadog, we've got to ensure they're converted to JSON format. This allows for filtering by specific parameters within Datadog.
 
-Within our `store-frontend-broken-instrumented/config/development.rb`, we see the specific code to ship our logs along with the correlating traces:
+Within our `store-frontend-broken-instrumented/store-frontend/config/development.rb`{{open}}, we see the specific code to ship our logs along with the correlating traces:
 
 ```ruby
   config.lograge.custom_options = lambda do |event|

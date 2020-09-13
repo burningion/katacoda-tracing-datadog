@@ -1,23 +1,3 @@
-# Deploying and Quantifying Improvements
-
-Now that we've instrumented all of our code, let's spin up some traffic so we can get a better look at what may be happening.
-
-## Spinning up Traffic for Our Site
-
-In our `/ecommerce-observability` folder, we've got a copy of [GoReplay](https://goreplay.org).
-
-We've also got a capture of traffic using GoReplay. Let's spin up an infinite loop of that traffic:
-
-```
-$ ./gor --input-file-loop --input-file requests_0.gor --output-http "http://localhost:3000"
-```
-
-Once we spin up that traffic with our included observability, we can now take a look at the issues we've come across since the new team rolled out their first microservice, the `advertisements-service`.
-
-Before we began instrumenting with Datadog, there'd been reports that the new `advertisements-service` broke the website. With the new deployment on staging, the `frontend` team has blamed the `ads-service` team, and the `advertisements-service` team has blamed the ops team.
-
-Now that we've got Datadog and APM instrumented in our code, let's see what's really been breaking our application.
-
 ## Adding Monitors to Our Services
 
 When we click into each of the services we've configured in APM, we see some default suggestions for monitors. Let's add some of these monitors so we can tell whenour application isn't performing properly.
@@ -44,9 +24,9 @@ If we look into the service, we can see that it's been laid out by views. There'
 
 It seems the problem happens in a template. Let's get rid of that part of the template so we can get the site back up and running while figuring out what happened.
 
-Our developers can see that they'll need to open `store-frontend/app/views/spree/layouts/spree_application.html.erb` and delete the line under `<div class="container">`. It should begin with a `<br />` and end with a `</center>`.
+Our developers can see that they'll need to open `store-frontend-broken-instrumented/store-frontend/app/views/spree/layouts/spree_application.html.erb`{{open}} and delete the line under `<div class="container">`. It should begin with a `<br />` and end with a `</center>`.
 
-In this case, the banner ads were meant to be put under `store-frontend/app/views/spree/products/show.html.erb` and `store-frontend/app/views/spree/home/index.html.erb`.
+In this case, the banner ads were meant to be put under `store-frontend-broken-instrumented/store-frontend/app/views/spree/products/show.html.erb` and `store-frontend-broken-instrumented/store-frontend/app/views/spree/home/index.html.erb`{{open}}.
 
 For the `index.html.erb`, under `<div data-hook="homepage_products">` our developers would add the code:
 
@@ -63,7 +43,7 @@ And for the `show.html.erb` at the very bottom add:
 
 We can assume our developers have done that, and deploy the code changes with our new Docker image name, `ddtraining/ecommerce-frontend:latest`.
 
-Edit the `https://github.com/DataDog/ecommerce-workshop/blob/master/docker-compose-files/docker-compose-broken-instrumented.yml`, changing the `frontend` service to point to the:
+Edit the `docker-compose-files/docker-compose-broken-instrumented.yml`{{open}}, changing the `frontend` service to point to the:
 
 ```
   image: "ddtraining/ecommerce-frontend:latest"

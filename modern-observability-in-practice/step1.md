@@ -23,4 +23,19 @@ Try browsing around, and notice the homepage takes a very long time to load.
 
 ![storedog](https://github.com/burningion/katacoda-tracing-datadog/raw/master/assets/ecommerce/storedog.png)
 
-Next, let's see how we instrument our application with Datadog and see where the slow page load is coming from.
+## Spinning up Traffic for Our Site
+
+In our `/ecommerce-observability` folder, we've got a copy of [GoReplay](https://goreplay.org).
+
+We've also got a capture of "production" traffic using GoReplay. Let's spin up an infinite loop of that traffic. Click the "+" sign next to the `storedog` tab, and open a new terminal to spin it up:
+
+```
+$ cd /ecommerce-observability
+$ ./gor --input-file-loop --input-file requests_0.gor --output-http "http://localhost:3000"
+```
+
+Once we spin up that traffic, we can then take a look at the issues we've come across since the new team rolled out their first few microservices.
+
+Before being instrumented with Datadog, there'd been reports that the new `advertisements-service` broke the website. With the new deployment on staging, the `frontend` team has blamed the `ads-service` team, and the `advertisements-service` team has blamed the ops team.
+
+With Datadog and APM instrumented in our code, let's see what's really been breaking our application.

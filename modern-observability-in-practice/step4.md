@@ -10,26 +10,23 @@ For supported applications like Flask, `ddtrace-run` dramatically simplifies the
 
 ## Instrumenting the Advertisements Service
 
-In our `docker-compose-files/docker-compose-broken-instrumented.yml` there's a command to bring up our Flask server. If we look, we'll see it's a:
-
-```
-flask run --port=5002 --host=0.0.0.0
-```
-
-Once we install the Python `ddtrace` by adding it to our `requirements.txt` (it should already be there), we edit this command by putting a `ddtrace-run` in front:
+In our `docker-compose-files/docker-compose-broken-instrumented.yml`{{open}} there's a command to bring up our Flask server. If we look, we'll see it's a:
 
 ```
 ddtrace-run flask run --port=5002 --host=0.0.0.0
 ```
 
-With this, we're ready to configure out application's instrumentation.
+The `ddtrace` Python library includes an executable that allows us to automatically instrument our Python application. We simply call the `ddtrace-run` application, followed by our normal deployment, and magically, everything is instrumented.
 
-Automatic instrumentation is done via environment variables in our `docker-compose-files/docker-compose-broken-instrumented.yml`:
+With this, we're now ready to _configure_ our application's instrumentation.
+
+Automatic instrumentation is done via environment variables in our `docker-compose-files/docker-compose-broken-instrumented.yml`{{open}}:
 
 ```
       - DATADOG_SERVICE_NAME=advertisements-service
-      - DATADOG_TRACE_AGENT_HOSTNAME=agent
+      - DD_AGENT_HOST=agent
       - DD_LOGS_INJECTION=true
+      - DD_VERSION=1.0
 ```
 
 With this, we've connected and instrumented all of our services to APM.
@@ -67,4 +64,6 @@ We can repeat the process, and fill out the settings for the `discounts-service`
       com.datadoghq.ad.logs: '[{"source": "python", "service": "discounts-service"}]'
 ```
 
-Now that we've fully instrumented our application, let's take a closer look at _why_ and _where_ our application may be failing.
+To verify for yourself, take a look at the `discounts-service/discounts.py`{{open}} file. You'll see there's no reference to Datadog at all.
+
+Now that we've fully instrumented our application, let's hop back in to Datadog to take a closer look at _why_ and _where_ our application may be failing.
